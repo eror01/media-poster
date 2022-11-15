@@ -1,5 +1,3 @@
-# media-poster
-
 <h1>Social Media PLatform for Job Posting</h1>
 <h2>Roles:</h2>
 <ul>
