@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include "includes/class_loader.php";
+$pageName = basename($_SERVER['PHP_SELF'], '.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,5 +14,4 @@
   <script src="https://kit.fontawesome.com/982187732a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-<?php include "classes/Db.php"; ?>
+<body class="<?php echo $pageName; ?>">

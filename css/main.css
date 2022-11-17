@@ -1,4 +1,63 @@
 body {
   background-color: #E0E0E0;
-  padding: 10px 0;
+  padding: 0 0 10px;
+}
+body.login {
+  background-color: #fff;
+}
+
+.page-login {
+  margin: 200px 0;
+}
+
+.page-login-other {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.page-login-other p {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.page-login-other p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  width: 250px;
+  height: 1px;
+  background-color: gray;
+  transform: translateY(-50%);
+}
+
+.page-login-other p::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: 250px;
+  height: 1px;
+  background-color: gray;
+  transform: translateY(-50%);
+}
+
+.page-login-form {
+  margin: 50px 0 20px;
+}
+
+.login-background {
+  margin-top: 50px;
+}
+
+.registration-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.registration {
+  border-radius: 5px;
 }

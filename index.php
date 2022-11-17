@@ -1,5 +1,11 @@
 <?php 
-include "header.php"; ?>
+include "header.php"; 
+if(isset($_SESSION['loggedIn']) && isset($_SESSION['userFirstName']) && isset($_SESSION['userLastName'])) {
+  $loggedIn = $_SESSION['loggedIn'];
+  $username = $_SESSION['userFirstName'] . $_SESSION['userLastName']; 
+  echo $username;
+}
+?>
 
 <div class="container">
   <div class="row">
