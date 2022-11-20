@@ -2,6 +2,7 @@ body {
   background-color: #E0E0E0;
   padding: 0 0 10px;
 }
+
 body.login {
   background-color: #fff;
 }
@@ -60,4 +61,65 @@ body.login {
 
 .registration {
   border-radius: 5px;
+}
+
+.navigation-body {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-logo {
+  margin-right: 20px;
+}
+
+.navigation-form form input {
+  width: 350px;
+}
+
+.navigation-pages ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.navigation-pages ul li {
+  margin-right: 25px;
+}
+
+.navigation-pages ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.navigation-profile {
+  margin-left: 50px;
+}
+
+.user-background img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.bg-placeholder img {
+  width: 100%;
+}
+
+.user-image-file {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-image-submit {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

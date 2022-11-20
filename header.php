@@ -1,7 +1,12 @@
 <?php 
 session_start();
 include "includes/class_loader.php";
-$pageName = basename($_SERVER['PHP_SELF'], '.php'); ?>
+$pageName = basename($_SERVER['PHP_SELF'], '.php');
+if(isset($_SESSION['loggedIn']) && isset($_SESSION['userFirstName']) && isset($_SESSION['userLastName'])) {
+  $loggedIn = $_SESSION['loggedIn'];
+  $username = $_SESSION['userFirstName'] . $_SESSION['userLastName']; 
+  $userID   = $_SESSION['userID'];
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
