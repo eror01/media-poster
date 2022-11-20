@@ -14,6 +14,7 @@ if(isset($_POST['login-submit'])) {
   $userLogin = new LoginController();
   $userLogin->loginUser($login_email, $login_password);
 } 
+
 ?>
 
 <section class="page-login">

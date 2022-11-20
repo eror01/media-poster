@@ -1,12 +1,13 @@
 <?php 
-session_start();
-include "includes/class_loader.php";
-$pageName = basename($_SERVER['PHP_SELF'], '.php');
-if(isset($_SESSION['loggedIn']) && isset($_SESSION['userFirstName']) && isset($_SESSION['userLastName'])) {
+  session_start();
+if(isset($_SESSION['loggedIn'])) {
   $loggedIn = $_SESSION['loggedIn'];
   $username = $_SESSION['userFirstName'] . $_SESSION['userLastName']; 
   $userID   = $_SESSION['userID'];
-} ?>
+}
+include "includes/class_loader.php";
+$pageName = basename($_SERVER['PHP_SELF'], '.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

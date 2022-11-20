@@ -2,6 +2,21 @@
 
 class Login extends Db {
 
+  protected function getUserIdAndInsertUserInfo($email) {
+    $stmt = $this->connect()->prepare('SELECT user_id FROM user WHERE user_email = ?;');
+    $stmt->execute(array($email));
+    $user_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $user_id = $user_id[0]['user_id'];
+    $stmt = $this->connect()->prepare('SELECT user_info_uid FROM user_info WHERE user_info_uid = ?;');
+    $stmt->execute(array($user_id));
+    if($stmt->rowCount() == 0) {
+      $stmt = $this->connect()->prepare('INSERT INTO user_info(user_info_uid) VALUES(?);');
+      $stmt->execute(array($user_id));
+    } else {
+      $stmt = null;
+    }
+  }
+
   protected function getUser($email, $password) {
     $stmt = $this->connect()->prepare('SELECT user_password FROM user WHERE user_email = ?;');
     $stmt->execute(array($email));
@@ -13,7 +28,6 @@ class Login extends Db {
     
     $passwordHash = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $checkPassword = password_verify($password, $passwordHash[0]['user_password']);
-    var_dump($checkPassword);
 
     if($checkPassword == false) {
       $stmt = null;
