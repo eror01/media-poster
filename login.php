@@ -10,7 +10,6 @@ if(isset($_GET['stmt'])) {
 if(isset($_POST['login-submit'])) {
   $login_email = $_POST['login-email'];
   $login_password = $_POST['login-password'];
-  
   $userLogin = new LoginController();
   $userLogin->loginUser($login_email, $login_password);
 } 

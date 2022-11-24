@@ -1,3 +1,15 @@
+$(document).ready(function() {
+  $('.user-info-skills').select2({
+    placeholder: "Select Your Skills",
+    allowClear: true,
+    closeOnSelect: false
+  });
+  $('.user-info-industry').select2({
+    placeholder: "Select a Industry",
+    allowClear: true
+  });
+});
+
 function displayImage(e) {
   if(e.files[0]) {
     const reader = new FileReader();
