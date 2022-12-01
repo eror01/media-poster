@@ -4,21 +4,32 @@ if(isset($_POST['ui-skills-submit'])) {
   $ui_skills      = $_POST['ui-skills'];
   $ui_json        = json_encode($ui_skills);
   $user->saveUserInfoSkills($ui_json,$userID);
+  header("Location: u?uid={$userID}");
 }
 $skillArrSingle = json_decode($user->userInfo->userInfoSkills, true);
 ?>
 <div class="user-skills shadow-sm mb-2 bg-body rounded">
   <h2>Skills</h2>
-  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userInfoSkills"><i class="fa-solid fa-plus"></i></button>
+  <?php if($userID === $user_info_uid) : ?>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userInfoSkills"><i class="fa-solid fa-plus"></i></button>
+  <?php endif; ?>
   <div class="user-skills_display">
     <ul>
-      <?php foreach($skillArrSingle as $skillSingle) : ?>
-        <li>
-          <i class="fa-solid fa-clipboard-check"></i>
-          <h4><?php echo $skillSingle; ?></h4>
-          <!-- <a href=""><i class="fa-regular fa-thumbs-up"></i></a> -->
-        </li>
-      <?php endforeach; ?>
+      <?php if($skillArrSingle) : ?>
+        <?php foreach($skillArrSingle as $skillSingle) : ?>
+          <li>
+            <i class="fa-solid fa-clipboard-check"></i>
+            <h4><?php echo $skillSingle; ?></h4>
+            <!-- <a href=""><i class="fa-regular fa-thumbs-up"></i></a> -->
+          </li>
+        <?php endforeach; ?>
+        <?php else : ?>
+          <li>
+            <i class="fa-solid fa-clipboard-check"></i>
+            <h4>Your Skills</h4>
+            <!-- <a href=""><i class="fa-regular fa-thumbs-up"></i></a> -->
+          </li>
+      <?php endif; ?>
     </ul>
   </div>
 </div>

@@ -1,9 +1,7 @@
 <?php 
-include "header.php";
-$user = new UserInfoController(); 
-$user->displayUserInfo($userID); ?>
+include "header.php"; ?>
 
-<div class="navigatio"><?php include "components/nav-top.php"; ?></div>
+<div class="navigation"><?php include "components/nav-top.php"; ?></div>
 <div class="container">
   <section class="user">
     <div class="row">
@@ -16,9 +14,7 @@ $user->displayUserInfo($userID); ?>
         </div>
       </div>
       <div class="col-3">
-        <div class="user-connections shadow-sm p-3 mb-5 bg-body rounded">
-          People You May Know
-        </div>
+        <?php include_once "components/user-sidebar.php"; ?>
       </div>
     </div>
   </section>

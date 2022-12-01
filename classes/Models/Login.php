@@ -47,12 +47,11 @@ class Login extends Db {
         exit();
       }
       $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      session_start();
-      $_SESSION['userID']       = $user[0]['user_id'];
-      $_SESSION['userFirstName']     = $user[0]['user_firstname'];
+      $_SESSION['userID']           = $user[0]['user_id'];
+      $_SESSION['userFirstName']    = $user[0]['user_firstname'];
       $_SESSION['userLastName']     = $user[0]['user_lastname'];
-      $_SESSION['loggedIn']     = true;
-      $stmt = null;
+      $_SESSION['loggedIn']         = true;
+      $stmt                         = null;
     }
   }
 

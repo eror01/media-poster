@@ -13,18 +13,24 @@
           </div>
           <div class="navigation-pages">
             <ul>
-              <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
+              <li><a href="index"><i class="fa-solid fa-house"></i>Home</a></li>
               <li><a href=""><i class="fa-solid fa-briefcase"></i>Jobs</a></li>
               <li><a href=""><i class="fa-solid fa-users"></i>My Network</a></li>
               <li><a href=""><i class="fa-solid fa-bell"></i>Notification</a></li>
             </ul>
           </div>
           <div class="navigation-profile">
-            <div class="circle">
-              <img src="" alt="User Image">
-              <a href="u?uid=<?php echo $userID; ?>" class="btn btn-outline-primary">View Profile</a>
-              <a href="logout.php">Logout</a>
-            </div>
+            <a href="u?uid=<?php echo $userID; ?>" class="navigation-circle-profile">
+              <img src="./images/<?php echo $user_info_avatar; ?>" class="profile">
+            </a>
+            <?php 
+            $currentUrlId = 'u?uid=' . $userID;
+            if(stripos($_SERVER['REQUEST_URI'], $currentUrlId)) : ?>
+            <a href="logout.php" class="navigation-profile-actions"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+            <?php else : ?>
+              <a href="u?uid=<?php echo $userID; ?>" class="navigation-profile-actions"><i class="fa-solid fa-user"></i>Profile</a>
+              <a href="logout.php" class="navigation-profile-actions"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+            <?php endif; ?>
           </div>
         </div>
       </div>

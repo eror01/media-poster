@@ -188,6 +188,17 @@ body.login {
   border-radius: 50%;
 }
 
+.user-avatar a{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+}
+
 .user-info {
   display: flex;
   justify-content: space-between;
@@ -326,4 +337,485 @@ body.login {
   font-weight: 400;
   color: black;
   line-height: 1.4;
+}
+
+.user-info-about-text textarea {
+  padding: 20px 15px; 
+  min-height: 350px;
+  max-height: 350px;
+}
+
+.user-info-form.user-info-about .user-info-submit-container {
+  justify-content: flex-end;
+}
+
+.modal.avatar-bg .modal-content-close {
+  background-color: #343a40;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modal.avatar-bg .modal-content-close .btn-close {
+  background: unset;
+  color: white;
+  font-size: 28px;
+  padding: 5px 15px;
+  height: unset;
+  width: unset;
+}
+
+.user-avatar-container {
+  background-color: #343a40;
+}
+
+.avatar-container-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.avatar-placeholder {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+
+.avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-avatar-buttons {
+  border-top: 1px solid #495057;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-buttons a {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-right: 50px;
+  font-size: 22px;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.user-avatar-buttons a i {
+  font-size: 32px;
+  color: #fff;
+}
+
+.user-avatar-save {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #0d6efd;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: background-color .3s ease;
+}
+
+.user-avatar-save:hover {
+  background-color: #0dcaf0;
+}
+
+.navigation-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navigation-profile {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-circle-profile {
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.navigation-profile-actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.navigation-profile-actions i {
+  font-size: 20px;
+}
+
+.navigation-profile-actions:last-of-type {
+  margin-right: 0;
+}
+
+.user-company p {
+  margin-bottom: 0;
+}
+
+.company-page form {
+  padding: 0 25px;
+}
+
+.char-count {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #adb5bd;
+}
+
+.char-count #current {
+  margin-right: 5px;
+}
+
+#comp-tagline {
+  max-height: 100px;
+  min-height: 100px;
+}
+
+.company-page-logo {
+  height: 120px;
+  border: 1px dotted #6c757d;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+}
+
+.company-page-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.company-page-file a {
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.company-page-file a i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.company-page-file a span {
+  display: block;
+}
+
+.company-page-file span {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.company-page-preview {
+  border-radius: 10px;
+}
+
+.company-page-preview-body {
+  padding: 40px 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ced4da;
+}
+
+.company-page-preview-info {
+  background-color: white;
+  padding: 10px 20px;
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+.company-page-preview-title {
+  padding: 10px 0 10px 30px;
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+.company-page-preview-info p {
+  margin-bottom: 0;
+}
+
+.company-page-create {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+}
+
+.company-page-preview-info img {
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.company-page-preview-info h3 {
+  font-size: 28px;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.company-page-preview-info p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.company-page-preview-info span {
+  font-size: 18px;
+  color: #adb5bd;
+}
+
+.company-page-preview-info button {
+  display: block;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+.company-page-preview-info button i {
+  margin-right: 5px;
+}
+
+.company-main-bg {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.company-main-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.company-main-bg .btn-primary {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.company-main-logo {
+  width: 112px;
+  height: 112px;
+  position: relative;
+  z-index: 1;
+  margin-top: -60px;
+}
+
+.company-main-logo::before {
+  content: "";
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  z-index: -1;
+}
+
+.company-main-logo a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.company-main-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-main-desc {
+  padding-left: 40px;
+  position: relative;
+}
+
+.company-main-desc .btn-primary {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+
+.company-main-info {
+  padding: 10px 40px 10px 0;
+}
+
+.company-main-info p {
+  color: #ced4da;
+  font-size: 18px;
+}
+
+.company-tabs {
+  padding: 20px 40px;
+}
+
+.company-about {
+  padding: 20px 40px;
+  position: relative;
+}
+
+.company-about .btn-primary {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.company-about h2 {
+  margin-bottom: 20px;
+}
+
+.company-about p {
+  font-size: 18px;
+}
+
+.modal.company-logo .modal-content-close {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #343a40;
+  padding: 10px 20px 10px 0;
+}
+
+.modal.company-logo .modal-content-close button i {
+  font-size: 24px;
+  color: #ced4da;
+}
+
+.modal.company-logo .modal-content-close .btn-close {
+  background: unset;
+}
+
+.company-logo-form {
+  background-color: #343a40;
+}
+
+.company-container-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.logo-placeholder img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.company-logo-buttons {
+  border-top: 1px solid #495057;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo-buttons a {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-right: 50px;
+  font-size: 22px;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.company-logo-buttons a i {
+  font-size: 32px;
+  color: #fff;
+}
+
+.company-logo-save {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #0d6efd;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: background-color .3s ease;
+}
+
+.company-logo-save:hover {
+  background-color: #0dcaf0;
+}
+
+.modal.company-desc.modal .modal-content-close {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.company-desc-submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 30px;
+}
+
+.company-bg-form form {
+  padding: 0 0;
+}
+
+.companybg-hero {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.company-bg-file {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-about-count {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.company-about-count #about-current {
+  margin-right: 5px;
+}
+
+.company-about-text #company-about {
+  max-height: 200px;
+  min-height: 200px;
+}
+
+.company-about-submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 0;
 }

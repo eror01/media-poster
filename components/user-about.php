@@ -1,6 +1,15 @@
+<?php 
+if(isset($_POST['ui-about-submit'])) {
+  $userAbout = validateInput($_POST['user-about']);
+  $user->saveUserInfoAbout($userAbout, $userID);
+  header("Location: u?uid={$userID}");
+}
+?>
 <div class="user-about shadow-sm mb-2 bg-body rounded">
   <h2>About</h2>
-  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userInfoAbout"><i class="fa-solid fa-pen-clip"></i></button>
+  <?php if($userID === $user_info_uid) : ?>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userInfoAbout"><i class="fa-solid fa-pen-clip"></i></button>
+  <?php endif; ?>
   <div class="user-about-text"><p><?php echo $user_info_about; ?></p></div>
 </div>
 
@@ -10,14 +19,14 @@
       <div class="modal-content-close">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="user-info-form">
+      <div class="user-info-form user-info-about">
         <form action="" method="POST">
-          <div class="mb-3">
+          <div class="user-info-about-text">
             <label for="exampleFormControlTextarea1" class="form-label">Edit About</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1"><?php echo $user_info_about; ?></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="user-about"><?php echo $user_info_about; ?></textarea>
           </div>
           <div class="user-info-submit-container">
-            <input type="submit" value="Confirm" name="ui-skills-submit" class="btn btn-success w-50">
+            <input type="submit" value="Save" name="ui-about-submit" class="btn btn-primary w-25">
           </div>
         </form>
       </div>
