@@ -11,25 +11,30 @@ $(document).ready(function() {
   $('.company-page-type').select2({
     placeholder: "Select type",
     allowClear: true,
-    closeOnSelect: false
   });
   $('.company-page-size').select2({
     placeholder: "Select size",
     allowClear: true
   });
+  $('#user-activity-post-privacy').select2({
+    minimumResultsForSearch: -1
+  });
   $('#comp-tagline').keyup(function() {
     const characterCount = $(this).val().length,
       current = $('#current'), maximum = $('#maximum'), theCount = $('.char-count');
-
     current.text(characterCount);
   });
-  const aboutCurrent = $('#about-current');
-  const companyAbout = $('#company-about').val().length;
-  aboutCurrent.text(companyAbout);
+  $('.modal.user-create-post').on('shown.bs.modal', function() {
+    $('#user-post-text').focus();
+  });
+  if(window.location.href.indexOf('company-page') > -1) {
+    const aboutCurrent = $('#about-current');
+    const companyAbout = $('#company-about').val().length;
+    aboutCurrent.text(companyAbout);
+  }
   $('#company-about').keyup(function() {
     const characterCount = $(this).val().length,
       current = $('#about-current'), maximum = $('#about-maximum'), theCount = $('.company-about-count');
-
     current.text(characterCount);
   });
   $('#comp-name').keyup(function() {
@@ -44,7 +49,15 @@ $(document).ready(function() {
     const compIndustry = $('#comp-industry').val(), companyIndustry = $('.company-industry');
     companyIndustry.text(compIndustry);
   });
+  $('#user-post-hash-button').on('click', function() {
+    $('.user-post-topic').val('#');
+    $('.user-post-topic').focus();
+  }); 
 });
+
+function triggerClickPostImg() {
+  document.querySelector('#postImage').click();
+}
 
 function triggerClick() {
   document.querySelector('#avatarImage').click();
@@ -103,6 +116,16 @@ function displayCompanyBg(e) {
     const reader = new FileReader();
     reader.onload = function(e) {
       document.querySelector('.companybg-hero').setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(e.files[0]);
+  }
+}
+
+function displayPostImage(e) {
+  if(e.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.querySelector('#user-post-content-img').setAttribute('src', e.target.result);
     }
     reader.readAsDataURL(e.files[0]);
   }

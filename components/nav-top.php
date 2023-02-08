@@ -23,14 +23,7 @@
             <a href="u?uid=<?php echo $userID; ?>" class="navigation-circle-profile">
               <img src="./images/<?php echo $user_info_avatar; ?>" class="profile">
             </a>
-            <?php 
-            $currentUrlId = 'u?uid=' . $userID;
-            if(stripos($_SERVER['REQUEST_URI'], $currentUrlId)) : ?>
             <a href="logout.php" class="navigation-profile-actions"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
-            <?php else : ?>
-              <a href="u?uid=<?php echo $userID; ?>" class="navigation-profile-actions"><i class="fa-solid fa-user"></i>Profile</a>
-              <a href="logout.php" class="navigation-profile-actions"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
-            <?php endif; ?>
           </div>
         </div>
       </div>

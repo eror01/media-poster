@@ -10,6 +10,7 @@ include "header.php"; ?>
           <?php
           include_once "components/user-main.php";
           include_once "components/user-about.php";
+          include_once "components/user-activity.php";
           include_once "components/user-skills.php"; ?>
         </div>
       </div>
